@@ -1,0 +1,204 @@
+body {
+    font-family:Arial,sans-serif;
+    line-height:1.5;
+    margin:10px;
+    padding:10px;
+    overflow-x: hidden;
+    background: #ffedce;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+
+.upper-heading {
+    text-align: left;
+    padding-top: 10px;
+    background-size:cover;
+    background-position: center;
+    background-repeat:no-repeat;
+    color: #204139;
+}
+.upper-heading p {
+    font-size: 20px;
+}
+
+
+.navbar {
+    background-color: #204139;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 3%;
+}
+.navbar .nav-link {
+    color: white;
+    padding: 5px 5px;
+    text-decoration: none;
+}
+.navbar .nav-link:hover {
+    color: rgb(0, 191, 255);
+}
+
+img{
+    border-radius: 10px;
+}
+
+#mission {
+    /* background-color:rgb(0, 191, 255); */
+    padding:25px;
+    background-size:cover;
+    background-repeat:no-repeat;
+    box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0.9) 0%, 
+    rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%), 
+    url(https://static.vecteezy.com/system/resources/thumbnails/071/708/748/small/dew-covered-green-leaves-frame-a-soft-focus-view-of-a-lush-foggy-forest-photo.jpg);
+}
+
+#projects {
+    padding:25px;
+    background: #89D7B7;  
+    box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+#get_involved {
+    padding:25px;
+    color:white;
+    background: #1A312C;
+    box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+#donate {
+    padding:25px;
+    /* background: #89D7B7;
+    box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+    border-radius: 20px; */
+}
+.donate-button {
+    background-color:#552f1f;
+    color:white;
+    padding:10px 40px;
+    cursor:pointer;
+    border-radius:5px;
+    text-align:center;
+    display:inline-block;
+    text-decoration:none;
+    opacity: 90%;
+}
+.donate-button:hover {
+    background-color: #4E220F;
+    opacity: 100%;
+}
+
+
+#updates {
+  padding: 25px;
+  background-color: #fff;
+  box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  overflow: hidden;
+}
+/* #updates .updates-track {
+  overflow: hidden;
+} */
+
+
+#updates .row {
+  /* display: flex; */
+  flex-wrap: nowrap;
+  /* animation: scroll-left 10s linear infinite; */
+}
+/* #updates .col-lg-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+} */
+/* #updates img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+} */
+/* @keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+} */
+/* @media (max-width: 991px) {
+  #updates .row {
+    animation: none;
+    flex-wrap: wrap;
+    transform: none;
+  }
+  #updates .col-sm-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  #updates img {
+    height: auto;
+  }
+} */
+
+
+footer {
+    text-align:center;
+    color:white;
+    background-color: #181818;
+    border-radius: 10px;
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 3%;  
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 45px;
+  height: 45px;
+  background: #181818;
+  color: #fff;
+  border-radius: 50%;
+  border: 2px solid #ff0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  z-index: 10000;
+}
+
+.carousel-item {
+    position: relative !important;
+    height: auto !important;
+}
+.carousel-item .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.carousel-item p {
+    position: static !important;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23198754' stroke-width='2.5' viewBox='0 0 16 16'%3E%3Cpath d='M11.5 1.5L5 8l6.5 6.5'/%3E%3C/svg%3E");
+}
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23198754' stroke-width='2.5' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 1.5L11 8l-6.5 6.5'/%3E%3C/svg%3E");
+}
+
+.carousel-content p {
+    font-size: inherit;
+}
+@media (min-width: 992px) {
+    .carousel-content p {
+        font-size: 1.25rem;
+    }
+}
+@media (max-width: 992px) {
+    .carousel-content {
+        margin-top: 15px;
+    }
+}
