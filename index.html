@@ -1,367 +1,732 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"content="width=device-width,initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Protecting Our Planet | NGO</title>
-    
-    <!-- <link href="assets/plugins/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/plugins/fontawesome-free-7.2.0-web/css/all.min.css" rel="stylesheet" /> -->
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Protecting Our Planet is an environmental NGO working on reforestation, plastic reduction, clean energy, wildlife protection, ocean conservation and more. Join us in preserving the environment for future generations.">
+  <meta name="theme-color" content="#0b1f18">
+  <title>Protecting Our Planet — A Call to Action for a Sustainable Future</title>
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="modulepreload" href="js/main.js">
+  <link rel="modulepreload" href="js/forest-scene.js">
+  <link rel="modulepreload" href="assets/vendor/three.module.min.js">
+  <link rel="modulepreload" href="assets/vendor/three.core.min.js">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/main.js"></script>
+  <noscript>
+    <style>
+      .stage { height: 100svh; }
+      .stage__sticky { position: relative; }
+      .projects { height: auto !important; }
+      .projects__sticky { position: relative; height: auto; padding-top: calc(var(--header-h) + 3rem); padding-bottom: 3rem; }
+      .projects__viewport { display: block; overflow-x: auto; overflow-y: hidden; padding: 0.5rem 0; scroll-snap-type: x mandatory; }
+      .projects__track { height: auto; padding: 0 max(var(--gutter), calc((100% - var(--container)) / 2 + var(--gutter))); transform: none !important; }
+      .project { width: min(82vw, 430px); height: min(70vh, 580px); min-height: 440px; }
+      .projects__meter, .projects__foot { display: none; }
+      @media (max-width: 900px) {
+        .site-header__inner { flex-wrap: wrap; gap: 0.35rem; }
+        .nav-toggle { display: none; }
+        .site-nav { position: static; inset: auto; visibility: visible; clip-path: none; display: block; width: 100%; padding: 0 0 0.75rem; background: none; }
+        .site-nav__list { flex-direction: row; flex-wrap: wrap; gap: 0.35rem 1rem; }
+        .site-nav__list a { color: var(--ivory); font-family: var(--font-body); font-size: 0.64rem; font-weight: 600; }
+        .site-nav__donate { display: none; }
+      }
+    </style>
+  </noscript>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  <div class="grain" aria-hidden="true"></div>
 
-<!-- Heading/Topic name -->
-<div class="container upper-heading" id="top">
-        <h1 class="fw-bold mb-0 pb-0" style="font-family: 'Times New Roman', Times, serif;">Protecting Our Planet: A Call to Action for a Sustainable Future</h1>
-        <p class="pb-3" style="font-weight: lighter;">Join us in our mission to preserve the environment for the future generations.</p>
-</div>
+  <header class="site-header" data-header>
+    <div class="site-header__inner">
+      <a class="brand" href="#top" aria-label="Protecting Our Planet — back to top">
+        <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M31 6C18 7 8 14 7 26c-.3 4 2 7.4 5.8 8.1C25 36.2 32 24 31 6Z" fill="currentColor"/>
+          <path d="M7 34c5-8 11-13 19-18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span class="brand__text">
+          <strong>Protecting Our Planet</strong>
+          <span>Environmental NGO</span>
+        </span>
+      </a>
 
-<!-- Navigation Bar -->
-<div class="container">
-    <nav class="navbar navbar-expand-sm navbar-dark">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="nav-toggle__label">Menu</span>
+        <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span></span>
+      </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav justify-content-evenly">
-                    <li class="nav-item me-4">
-                        <a class="nav-link" href="#mission">Mission & Vision</a>
-                    </li>
-                    <li class="nav-item me-4">
-                        <a class="nav-link" href="#projects">Ongoing Projects</a>
-                    </li>
-                    <li class="nav-item me-4">
-                        <a class="nav-link" href="#get_involved">Get Involved</a>
-                    </li>
-                    <li class="nav-item me-4">
-                        <a class="nav-link" href="#donate">Donate</a>
-                    </li>
-                </ul>
-            </div>
+      <nav class="site-nav" id="site-nav" aria-label="Primary" data-nav>
+        <ul class="site-nav__list">
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#get_involved">Get involved</a></li>
+          <li><a href="#updates">Updates</a></li>
+        </ul>
+        <a class="btn btn--small btn--sun site-nav__donate" href="#donate">Donate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero + scroll-driven forest passage -->
+    <section class="stage" id="top" aria-labelledby="hero-title" data-stage>
+      <div class="stage__sticky">
+        <div class="stage__fallback" aria-hidden="true">
+          <img src="assets/images/hero-fallback.webp" alt="" width="1600" height="1000" fetchpriority="high">
         </div>
-    </nav>
-</div>
+        <canvas class="stage__canvas" id="forest-canvas" aria-hidden="true"></canvas>
+        <div class="stage__scrim" aria-hidden="true"></div>
+        <div class="stage__rays" aria-hidden="true"></div>
+        <div class="stage__mist" aria-hidden="true"></div>
 
-<!-- Mission & Vision Block -->
-<div class="container">
-    <section id="mission">
-        <h3 class="fw-bold pt-2 pb-3 fs-2">Our Mission & Vision</h3>
-        <div class="row">
-            <div class="col-lg-8 col-sm-12">
-                <p>Our mission is to safeguard the planet by inspiring awareness, advocating for sustainable policies, and mobilizing communities to take action in environmental conservation. We believe that education, advocacy, and direct engagement are key to fostering a deep sense of responsibility toward our natural world. By empowering individuals and organizations with the knowledge and tools to make a difference, we work to protect biodiversity, combat climate change, and promote eco-friendly practices. Our efforts aim to create lasting, positive environmental impacts that benefit both current and future generations. We envision a world where sustainability is not just an aspiration but a fundamental way of life. In this future, individuals and communities actively protect and restore nature, ensuring that ecosystems thrive alongside human development. Through responsible resource management, innovative solutions, and collective stewardship, we can create a harmonious balance between human needs and environmental preservation. By fostering collaboration between governments, businesses, and civil society, we strive for a future where clean air, pure water, and rich biodiversity are safeguarded for all, ensuring a prosperous and resilient planet for generations to come.
-                </p>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <img src="https://thumbs.dreamstime.com/b/volunteers-planting-trees-world-environment-day-sustainable-development-goals-environment-global-effort-403867464.jpg" class="image-fluid w-100 h-100 object-fit-cover">
-            </div>
+        <div class="stage__leaves" aria-hidden="true">
+          <svg class="leaf leaf--1" viewBox="0 0 100 100">
+            <path d="M50 2c15 24 23 44 23 61 0 19-9 33-23 37-14-4-23-18-23-37C27 46 35 26 50 2Z"/>
+            <path class="leaf__vein" d="M50 90c0-24 4-46 14-70" fill="none"/>
+          </svg>
+          <svg class="leaf leaf--2" viewBox="0 0 100 100">
+            <path d="M50 2c15 24 23 44 23 61 0 19-9 33-23 37-14-4-23-18-23-37C27 46 35 26 50 2Z"/>
+            <path class="leaf__vein" d="M50 90c0-24 4-46 14-70" fill="none"/>
+          </svg>
+          <svg class="leaf leaf--3" viewBox="0 0 100 100">
+            <path d="M50 2c15 24 23 44 23 61 0 19-9 33-23 37-14-4-23-18-23-37C27 46 35 26 50 2Z"/>
+            <path class="leaf__vein" d="M50 90c0-24 4-46 14-70" fill="none"/>
+          </svg>
+          <svg class="leaf leaf--4" viewBox="0 0 100 100">
+            <path d="M50 2c15 24 23 44 23 61 0 19-9 33-23 37-14-4-23-18-23-37C27 46 35 26 50 2Z"/>
+            <path class="leaf__vein" d="M50 90c0-24 4-46 14-70" fill="none"/>
+          </svg>
         </div>
+
+        <div class="hero">
+          <div class="hero__inner">
+            <p class="eyebrow eyebrow--light hero__eyebrow"><span class="eyebrow__dot"></span>Protecting Our Planet · Environmental NGO</p>
+            <h1 class="hero__title" id="hero-title">
+              <span class="hero__title-line">Protecting</span>
+              <span class="hero__title-line hero__title-line--accent"><em>Our Planet</em></span>
+            </h1>
+            <p class="hero__sub">A call to action for a sustainable future.</p>
+            <p class="hero__lede">Join us in our mission to preserve the environment for the future generations.</p>
+            <div class="hero__actions">
+              <a class="btn btn--sun" href="#mission">
+                <span>Explore our mission</span>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              </a>
+              <a class="btn btn--ghost" href="#get_involved">
+                <span>Get involved</span>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <p class="hero__rail" aria-hidden="true"><span>01</span><span class="hero__rail-line"></span><span>Enter the living forest</span></p>
+
+          <a class="hero__scrollcue" href="#mission" aria-label="Scroll to our mission">
+            <span>Scroll to enter</span>
+            <span class="hero__scrollcue-line" aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div class="stage__whisper">
+          <p>The forest is not a backdrop.</p>
+          <p><em>It is the reason we do this work.</em></p>
+        </div>
+
+        <div class="stage__ground" aria-hidden="true"></div>
+      </div>
     </section>
-</div>
 
-<!-- Ongoing Projects -->
-<div class="container pt-5 text-left">
-    <section id="projects">
-        <h3 class="fw-bold pt-2 pb-3 fs-2">Ongoing Projects</h3>
+    <!-- Mission & vision -->
+    <section class="mission" id="mission" aria-labelledby="mission-title">
+      <div class="clearing-edge" aria-hidden="true">
+        <svg viewBox="0 0 1440 180" preserveAspectRatio="none">
+          <path d="M0 180V98C156 44 338 112 566 70 810 25 1040 98 1440 24V180Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="eyebrow__dot"></span>01 · Our mission &amp; vision</p>
+          <h2 class="display display--dark" id="mission-title">A world where <em>sustainability</em> is not just an aspiration.</h2>
+          <p class="section-head__aside">Education, advocacy and direct engagement — the roots of lasting environmental change.</p>
+        </header>
 
-        <!-- Reforestation Efforts -->
-        <div class="row my-5">
-            <div class="col-lg-7 col-sm-12 me-3">
-                
-                    <b>Reforestation Efforts</b>
-                    <p class="mt-3">
-                        We are restoring deforested and degraded lands by planting thousands of trees, helping to combat climate change, restore ecosystems, and improve environmental health. Our efforts reduce carbon dioxide levels, enhance biodiversity, improve air quality, and prevent soil erosion, ensuring long-term sustainability.
-                        Beyond environmental benefits, our reforestation programs actively involve local communities, creating jobs, strengthening economies, and fostering environmental stewardship. By working together, we ensure that restored forests continue to thrive, providing lasting benefits for both people and nature.
-                    </p>
+        <div class="mission__grid">
+          <figure class="mission__figure reveal">
+            <span class="mission__sun" aria-hidden="true"></span>
+            <div class="mission__mask" data-tilt data-tilt-strength="7" data-parallax="0.08">
+              <img src="assets/images/mission-hands.webp" alt="Hands gently cradling a small green fern above the forest floor" width="900" height="1125" loading="lazy" decoding="async">
             </div>
-            <div class="col-lg-4 col-sm-12">
-                <img src="https://previews.123rf.com/images/dinozzaver/dinozzaver1607/dinozzaver160700018/61669065-vista-a%C3%A9rea-de-los-bosques-en-las-monta%C3%B1as-azules-parque-nacional-australia.jpg" class="image-fluid w-100 h-100 object-fit:cover">
-            </div>
+            <svg class="mission__leafline" viewBox="0 0 300 90" aria-hidden="true">
+              <path d="M4 70C68 64 99 20 148 20c46 0 75 40 148 34" fill="none" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M148 20c-3-12 7-16 12-4 4 10-4 15-12 4Z" fill="currentColor"/>
+            </svg>
+            <figcaption>Care begins small — and grows into a living canopy.</figcaption>
+          </figure>
+
+          <div class="mission__copy">
+            <article class="mission__block reveal">
+              <span class="mission__marker" aria-hidden="true">M</span>
+              <h3>Our Mission</h3>
+              <p>Our mission is to safeguard the planet by inspiring awareness, advocating for sustainable policies, and mobilizing communities to take action in environmental conservation. We believe that education, advocacy, and direct engagement are key to fostering a deep sense of responsibility toward our natural world. By empowering individuals and organizations with the knowledge and tools to make a difference, we work to protect biodiversity, combat climate change, and promote eco-friendly practices. Our efforts aim to create lasting, positive environmental impacts that benefit both current and future generations.</p>
+            </article>
+
+            <article class="mission__block mission__block--vision reveal">
+              <span class="mission__marker" aria-hidden="true">V</span>
+              <h3>Our Vision</h3>
+              <p>We envision a world where sustainability is not just an aspiration but a fundamental way of life. In this future, individuals and communities actively protect and restore nature, ensuring that ecosystems thrive alongside human development. Through responsible resource management, innovative solutions, and collective stewardship, we can create a harmonious balance between human needs and environmental preservation. By fostering collaboration between governments, businesses, and civil society, we strive for a future where clean air, pure water, and rich biodiversity are safeguarded for all, ensuring a prosperous and resilient planet for generations to come.</p>
+            </article>
+          </div>
         </div>
-        <hr>
+      </div>
 
-        <!-- Reducing Plastic Waste -->
-        <div class="row my-5">
-            <div class="col-lg-7 col-sm-12 me-3">
-                    <b>Reducing Plastic Waste</b>
-                    <p class="mt-3">
-                        Reducing plastic waste is essential to protecting our environment, wildlife, and human health. Plastic pollution clogs waterways, harms marine life, and contributes to toxic pollution in our air and soil. We are actively working to address this crisis through education, policy advocacy, and hands-on action. By organizing awareness campaigns, we inform individuals and businesses about the dangers of plastic waste and encourage eco-friendly alternatives. Our community clean-up drives remove plastic from natural spaces, while our advocacy efforts push for policies that promote biodegradable materials and improved recycling systems. Through these initiatives, we aim to create plastic-free communities, reduce dependency on single-use plastics, and inspire a culture of sustainability for future generations.
-                    </p>
+      <div class="impact" id="impact" aria-labelledby="impact-title">
+        <div class="container impact__inner">
+          <div class="impact__head reveal">
+            <p class="eyebrow eyebrow--light"><span class="eyebrow__dot"></span>02 · Our reach</p>
+            <h2 class="display display--light" id="impact-title">A living index <em>of our work.</em></h2>
+            <p>Eight ongoing initiatives. Ten ways to take part. One shared purpose.</p>
+          </div>
+          <dl class="impact__figures">
+            <div class="impact__figure reveal">
+              <dt>Ongoing projects</dt>
+              <dd><span class="counter" data-count="8">08</span></dd>
+              <span class="impact__leaf" aria-hidden="true"></span>
             </div>
-            <div class="col-lg-4 col-sm-12">
-                <img src="https://karosambhavfoundation.org/public/uploads/bbb22422c8aadf4b95dc5f3a76312753.jpg" class="image-fluid w-100 h-100 object-fit:cover">
+            <div class="impact__figure reveal">
+              <dt>Ways to get involved</dt>
+              <dd><span class="counter" data-count="10">10</span></dd>
+              <span class="impact__leaf" aria-hidden="true"></span>
             </div>
+            <div class="impact__figure reveal">
+              <dt>Shared mission</dt>
+              <dd><span class="counter" data-count="1">01</span></dd>
+              <span class="impact__leaf" aria-hidden="true"></span>
+            </div>
+          </dl>
         </div>
-        <hr>
-
-        <!-- Clean Energy Solutions -->
-        <div class="row my-5">
-            <div class="col-lg-7 col-sm-12 me-3">
-                    <b>Clean Energy Solutions</b>
-                    <p class="mt-3">
-                        Clean energy solutions are key to building a sustainable future and mitigating the harmful effects of climate change. By investing in and advocating for renewable energy sources like solar, wind, and hydroelectric power, we help reduce carbon emissions and decrease dependence on fossil fuels. We also promote energy efficiency through education, technological innovation, and policy support, ensuring that individuals, businesses, and governments adopt greener practices. Our efforts aim to accelerate the transition to a cleaner, more resilient energy system that benefits both people and the planet.
-                    </p>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <img src="https://irecusa.org/wp-content/uploads/2021/06/Energy-Ready-Social-Graphic-1-1-1024x343.png" class="image-fluid w-100 h-100 object-fit:cover">
-            </div>
-        </div>
-        <hr>
-
-        <!-- Endangered Species Protection -->
-        <div class="row my-5">
-            <div class="col-lg-7 col-sm-12 me-3">
-                    <b>Endangered Species Protection</b>
-                    <p class="mt-3">
-                        Endangered species protection is vital for maintaining ecological balance and preserving the planet’s rich biodiversity. Many species face extinction due to deforestation, pollution, climate change, and human activities like illegal poaching and habitat destruction. We work to address these threats by restoring natural habitats, enforcing wildlife protection measures, and advocating for stronger conservation policies. Through education and awareness campaigns, we inspire communities to take action and support efforts to protect vulnerable species. By collaborating with local and global organizations, we create long-term solutions to ensure that endangered wildlife not only survives but thrives for future generations.
-                    </p>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <img src="https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/679fdf9d27d64e001dd04e59.webp" class="image-fluid w-100 h-100 object-fit:cover">
-            </div>
-        </div>
-        <hr>
-
-        <!-- Ocean and Marine Conservation -->
-        <div class="row my-5">
-            <div class="col-lg-7 col-sm-12 me-3">
-                    <b>Ocean and Marine Conservation</b>
-                    <p class="mt-3">
-                        Ocean and marine conservation is essential for protecting marine life, regulating the climate, and sustaining coastal communities. Our efforts focus on reducing ocean plastic pollution, restoring damaged marine ecosystems, and advocating for policies that prevent overfishing and habitat destruction. Through initiatives like beach clean-ups, coral reef restoration, and sustainable fishing advocacy, we help maintain the delicate balance of marine biodiversity. By working with local communities, scientists, and policymakers, we strive to create long-term solutions that safeguard ocean health for future generations.
-                    </p>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <img src="https://www.odyssea.lu/wp-content/uploads/2020/06/WorldOceansDayCover.jpg" class="image-fluid w-100 h-100 object-fit:cover">
-            </div>
-        </div>
-        <hr>
-
-        <!-- Sustainable Agriculture and Food Security -->
-        <div class="row my-5">
-            <div class="col-lg-7 col-sm-12 me-3">
-                    <b>Sustainable Agriculture and Food Security</b>
-                    <p class="mt-3">
-                        Sustainable agriculture is crucial for balancing food production with environmental conservation, ensuring long-term food security while protecting natural resources. We promote regenerative farming techniques that enhance soil health, improve water conservation, and boost biodiversity. By supporting organic farming, agroforestry, and reduced chemical use, we help minimize pollution and preserve ecosystems. Through farmer training programs, community workshops, and advocacy for sustainable food systems, we empower local communities to adopt eco-friendly agricultural practices that improve livelihoods and resilience to climate change.
-                    </p>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <img src="https://media.licdn.com/dms/image/v2/D5612AQE18YG59sxYsg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1684592818737?e=2147483647&v=beta&t=Aw-Rb1GheeMtrW31302kYpTsHMwXE4Nne7VrbY1FazA" class="image-fluid w-100 h-90 object-fit:cover">
-            </div>
-        </div>
-        <hr>
-
-        <!-- Water Conservation and Management -->
-        <div class="row my-5">
-            <div class="col-lg-7 col-sm-12 me-3">
-                    <b>Water Conservation and Management</b>
-                    <p class="mt-3">
-                        Water conservation and management are essential for sustaining life, protecting ecosystems, and ensuring long-term water availability. We work to preserve freshwater sources through watershed protection, wetland restoration, and the prevention of industrial and agricultural pollution. By promoting sustainable irrigation techniques, wastewater recycling, and community-based water management programs, we help optimize water use while reducing waste. Our efforts aim to build climate resilience, safeguard drinking water supplies, and support both human and ecological needs in an era of increasing water scarcity. Additionally, we educate communities on the importance of water stewardship and advocate for policies that promote responsible water usage. By combining innovation, conservation, and community involvement, we strive to secure a sustainable and equitable water future for all.
-                    </p>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <img src="https://tracextech.com/wp-content/uploads/2024/04/water-conservation.png" class="image-fluid w-100 h-90 object-fit:cover">
-            </div>
-        </div>
-        <hr>
-
-        <!-- Urban Green Spaces and Sustainable Cities -->
-        <div class="row mt-5"> 
-            <div class="col-lg-7 col-sm-12 me-3">
-                    <b>Urban Green Spaces and Sustainable Cities</b>
-                    <p class="mt-3">
-                        Urban green spaces are essential for creating healthier, more sustainable cities by improving air quality, enhancing biodiversity, and providing residents with natural areas for recreation and well-being. As urbanization accelerates, we advocate for integrating parks, rooftop gardens, vertical forests, and tree-lined streets into city planning. These initiatives help combat air pollution, reduce urban heat island effects, and improve stormwater management by absorbing excess rainfall. Additionally, green spaces promote mental and physical well-being, fostering stronger community connections and enhancing overall quality of life. Through partnerships with city planners, architects, and local communities, we work to develop eco-friendly infrastructure that prioritizes sustainability, resilience, and environmental balance in urban development.
-                    </p>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <img src="https://miro.medium.com/v2/resize:fit:1024/1*CMTYfrewGgVqRCuYoXy7xQ.png" class="image-fluid w-100 h-75 object-fit:cover">
-            </div>
-        </div>
-
-        <!-- Footer Note -->
-        <div class="container pb-2">
-            <p class="fw-bold">By taking action through these initiatives, we aim to create a healthier, more sustainable planet for future generations. Join us in making a difference today!</p>
-        </div>
+      </div>
     </section>
-</div>
 
-<!-- Ways to Get Involved -->
-<div class="container pt-5 text-left">
-    <section id="get_involved">
-        <h3 class="fw-bold pt-2 pb-3 fs-2">Ways to Get Involved</h3>
-        <p class="pb-3">There are many ways you can help us in our mission to create a healthier,more sustainable world. Whether you prefer hands-on action, spreading awareness, or supporting the cause in other ways, every effort makes a difference!</p>
-
-        <ol type="1">
-            <li class="pb-3">
-                <b>Volunteer for Local Clean-Up Events and Planting Activities</b>
-                <p class="mt-2">
-                    Join community-driven initiatives to clean up parks, beaches, and public spaces. These events not only beautify our environment but also prevent waste from harming wildlife and ecosystems. Additionally, participate in tree-planting and native plant restoration projects to improve air quality, support biodiversity, and combat climate change.
-                </p>
-                <details>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSehqk_YmPy5LNSskXCfqWGE3U-zZWqA-PxUjBV59IdQF4ld1w/viewform?usp=sharing" target="_blank" style="color:powderblue">
-                        <p class="fw-bold mx-3 mt-2">Click Here to fill the forms!!!</p>
-                    </a>
-                    <summary class="fst-italic fw-bold mt-2">
-                        <mark style="background-color: #e9b57a;">
-                            <i>Forms for Volunteers to sign-up for local clean-up events and planting activites.</i>
-                        </mark>
-                    </summary>
-                </details>
-            </li>
-            <li class="py-3">
-                <b>Educate Your Community About Sustainability</b>
-                <p class="mt-2">
-                    Raise awareness by hosting workshops, giving presentations, or simply having conversations with friends and family about sustainable living. You can organize school programs, community meetings, or workplace initiatives to discuss topics like waste reduction, energy conservation, and eco-friendly alternatives.
-                </p>
-            </li>
-            <li class="py-2">
-                <b>Share Our Message on Social Media</b>
-                <p class="mt-2">
-                    Help spread awareness by posting about environmental issues, sharing sustainability tips, and promoting local events. Use hashtags, create engaging content, and encourage your followers to take action. A single post can inspire others to make a change!
-                </p>
-            </li>
-            <li class="py-2">
-                <b>Support Eco-Friendly Businesses and Practices</b>
-                <p class="mt-2">
-                    Choose to buy from companies that prioritize sustainability, such as those that use ethical sourcing, plastic-free packaging, or renewable energy. Supporting these businesses encourages more companies to adopt environmentally friendly practices.
-                </p>  
-            </li>
-            <li class="py-2">
-                <b>Reduce, Reuse, and Recycle in Your Daily Life</b>
-                <p class="mt-2">
-                    Make conscious choices to minimize waste. Reduce single-use plastics, opt for reusable products, and recycle properly according to your local guidelines. Composting organic waste is another great way to reduce landfill contributions and enrich the soil.
-                </p>    
-            </li>
-            <li class="py-2">
-                <b>Advocate for Environmental Policies</b>
-                <p class="mt-2">
-                    Get involved in local and national environmental advocacy. Sign petitions, attend town hall meetings, and contact representatives to push for policies that protect natural resources, reduce carbon emissions, and promote sustainable practices.
-                </p>    
-            </li>
-            <li class="py-2">
-                <b>Organize or Participate in Sustainability Challenges</b>
-                <p class="mt-2">
-                    Challenge yourself and others to adopt more sustainable habits! Participate in or create initiatives like "Plastic-Free July," "Bike to Work Month," or "Zero-Waste Challenges." These activities promote awareness and encourage long-term behavior changes.
-                </p>    
-            </li>
-            <li class="py-2">
-                <b>Donate or Fundraise for Environmental Causes</b>
-                <p class="mt-2">
-                    Support organizations working to protect the environment by donating or organizing fundraisers. Even small contributions help fund projects such as reforestation, wildlife conservation, and clean energy research.
-                </p>    
-            </li>
-            <li class="py-2">
-                <b>Start a Community Garden or Urban Green Space</b>
-                <p class="mt-2">
-                    Encourage local food production and biodiversity by starting or joining a community garden. These spaces provide fresh produce, improve air quality, and foster a sense of community while promoting sustainable practices.
-                </p>    
-            </li>
-            <li class="py-2">
-                <b>Reduce Your Carbon Footprint</b>
-                <p class="mt-2">
-                    Support organizations working to protect the environment by donating or organizing fundraisers. Even small contributions help fund projects such as reforestation, wildlife conservation, and clean energy research.
-                </p>
-            </li>
-        </ol>
-    </section>
-</div>
-
-<!-- Donate -->
-<div class="container pt-5 text-left">
-    <section id="donate">
-            <h3 class="fw-bold pt-2 pb-3 fs-2">Make a Difference &#45; <i>Donate Today</i></h3>
-            <p class="fw-bold">Your donation helps us fund critical conservation efforts. Together, we can make a lasting impact.</p>
-            <a href="https://www.paypal.com/donate?hosted_button_id=PROTECTING_OUR_PLANET" class="donate-button"><b>Donate Now</b></a>
-    </section>
-</div>
-
-<!-- Updates, Carousel -->
-<div class="container mt-5">  
-    <section id="updates">
-        <div class="updates-track">
-            <h3 class="fw-bold py-2 fs-2" style="color: #1A312C;">Updates</h3>
-
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="container px-5">
-                            <div class="row align-items-center flex-column flex-lg-row">
-                                <div class="col-lg-6 col-sm-12 ps-lg-5 ms-lg-3">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMm7aCF01soN-QmQLkrOIU8q92j1FKXHde8A&s" class="img-fluid w-100" alt="Ocean Protection">
-                                </div>
-                                <div class="col-lg-6 col-sm-12">
-                                    <div class="carousel-content">
-                                        <p class="fs-5 pe-lg-5 me-lg-5"><b>June 28, 2022 -</b>
-                                            <a href="https://www.rewild.org/press/philanthropic-organizations-commit-usd1-billion-usd-to-help-protect-30"
-                                            target="_blank"
-                                            style="text-decoration:none;">
-                                                <strong>
-                                                    Philanthropic organizations commit $1 billion USD to help protect 30 percent of the ocean by 2030
-                                                </strong>
-                                            </a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="container px-5">
-                            <div class="row align-items-center flex-column flex-lg-row">
-                                <div class="col-lg-6 col-sm-12 ps-lg-5 ms-lg-3">
-                                    <img src="https://thecsrjournal.in/wp-content/uploads/2024/01/New-Years-Resolution-Environment-Conservation-1.jpg" class="img-fluid w-100" alt="Environment Conservation">
-                                </div>
-                                <div class="col-lg-6 col-sm-12">
-                                    <div class="carousel-content">
-                                        <p class="fs-5 pe-lg-5 me-lg-5"><b>September 22, 2021 -</b>
-                                            <a href="https://www.rewild.org/press/private-funders-of-the-new-protecting-our-planet-challenge-announce-usd5"
-                                            target="_blank"
-                                            style="text-decoration:none;">
-                                                <strong>
-                                                    Private Funders of the New &apos;Protecting Our Planet Challenge&apos; Announce $5 Billion Commitment to Protect and Conserve 30% of Planet by 2030
-                                                </strong>
-                                            </a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+    <!-- Projects: a pinned, horizontal editorial journey -->
+    <section class="projects" id="projects" aria-labelledby="projects-title" data-projects>
+      <div class="projects__sticky">
+        <div class="projects__head container">
+          <div class="projects__head-main">
+            <p class="eyebrow eyebrow--light"><span class="eyebrow__dot"></span>03 · Ongoing projects</p>
+            <h2 class="display display--light" id="projects-title">Eight ways we <em>tend the world.</em></h2>
+          </div>
+          <div class="projects__head-aside">
+            <p>Travel through the work — from the forest floor to the open ocean. Each project is a living commitment, shaped with communities.</p>
+            <div class="projects__meter" aria-hidden="true">
+              <span class="projects__meter-count" data-projects-current>01</span>
+              <span class="projects__meter-line"><span data-projects-bar></span></span>
+              <span>08</span>
             </div>
+          </div>
         </div>
+
+        <section class="projects__viewport" data-projects-viewport aria-label="Ongoing projects">
+          <div class="projects__track" data-projects-track>
+            <article class="project" aria-labelledby="project-1-title">
+              <figure class="project__media" data-tilt data-tilt-strength="4">
+                <img src="assets/images/project-reforestation.webp" alt="Sunlight filtering through a dense green forest beside a walking path" width="820" height="1040" fetchpriority="low" decoding="async">
+                <span class="project__index" aria-hidden="true">01</span>
+              </figure>
+              <div class="project__body">
+                <p class="project__meta"><span>01 / 08</span> <span>Forests</span></p>
+                <h3 id="project-1-title">Reforestation Efforts</h3>
+                <p class="project__teaser">We are restoring deforested and degraded lands by planting thousands of trees, helping to combat climate change, restore ecosystems, and improve environmental health. Our efforts reduce carbon dioxide levels, enhance biodiversity, improve air quality, and prevent soil erosion, ensuring long-term sustainability.</p>
+                <button class="project__more" type="button" aria-haspopup="dialog" data-open-story="project-1" aria-controls="project-1">Read the full story <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+              </div>
+            </article>
+
+            <article class="project" aria-labelledby="project-2-title">
+              <figure class="project__media" data-tilt data-tilt-strength="4">
+                <img src="assets/images/project-plastic.webp" alt="Plastic waste drifting in bright blue ocean water" width="820" height="1040" fetchpriority="low" decoding="async">
+                <span class="project__index" aria-hidden="true">02</span>
+              </figure>
+              <div class="project__body">
+                <p class="project__meta"><span>02 / 08</span> <span>Waste</span></p>
+                <h3 id="project-2-title">Reducing Plastic Waste</h3>
+                <p class="project__teaser">Reducing plastic waste is essential to protecting our environment, wildlife, and human health. Plastic pollution clogs waterways, harms marine life, and contributes to toxic pollution in our air and soil.</p>
+                <button class="project__more" type="button" aria-haspopup="dialog" data-open-story="project-2" aria-controls="project-2">Read the full story <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+              </div>
+            </article>
+
+            <article class="project" aria-labelledby="project-3-title">
+              <figure class="project__media" data-tilt data-tilt-strength="4">
+                <img src="assets/images/project-energy.webp" alt="Wind turbines standing across a field at sunset" width="820" height="1040" fetchpriority="low" decoding="async">
+                <span class="project__index" aria-hidden="true">03</span>
+              </figure>
+              <div class="project__body">
+                <p class="project__meta"><span>03 / 08</span> <span>Energy</span></p>
+                <h3 id="project-3-title">Clean Energy Solutions</h3>
+                <p class="project__teaser">Clean energy solutions are key to building a sustainable future and mitigating the harmful effects of climate change. By investing in and advocating for renewable energy sources like solar, wind, and hydroelectric power, we help reduce carbon emissions and decrease dependence on fossil fuels.</p>
+                <button class="project__more" type="button" aria-haspopup="dialog" data-open-story="project-3" aria-controls="project-3">Read the full story <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+              </div>
+            </article>
+
+            <article class="project" aria-labelledby="project-4-title">
+              <figure class="project__media" data-tilt data-tilt-strength="4">
+                <img src="assets/images/project-species.webp" alt="An elephant standing among dense green trees" width="820" height="1040" fetchpriority="low" decoding="async">
+                <span class="project__index" aria-hidden="true">04</span>
+              </figure>
+              <div class="project__body">
+                <p class="project__meta"><span>04 / 08</span> <span>Wildlife</span></p>
+                <h3 id="project-4-title">Endangered Species Protection</h3>
+                <p class="project__teaser">Endangered species protection is vital for maintaining ecological balance and preserving the planet’s rich biodiversity. Many species face extinction due to deforestation, pollution, climate change, and human activities like illegal poaching and habitat destruction.</p>
+                <button class="project__more" type="button" aria-haspopup="dialog" data-open-story="project-4" aria-controls="project-4">Read the full story <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+              </div>
+            </article>
+
+            <article class="project" aria-labelledby="project-5-title">
+              <figure class="project__media" data-tilt data-tilt-strength="4">
+                <img src="assets/images/project-ocean.webp" alt="A large ocean wave breaking beneath a pink evening sky" width="820" height="1040" fetchpriority="low" decoding="async">
+                <span class="project__index" aria-hidden="true">05</span>
+              </figure>
+              <div class="project__body">
+                <p class="project__meta"><span>05 / 08</span> <span>Oceans</span></p>
+                <h3 id="project-5-title">Ocean and Marine Conservation</h3>
+                <p class="project__teaser">Ocean and marine conservation is essential for protecting marine life, regulating the climate, and sustaining coastal communities. Our efforts focus on reducing ocean plastic pollution, restoring damaged marine ecosystems, and advocating for policies that prevent overfishing and habitat destruction.</p>
+                <button class="project__more" type="button" aria-haspopup="dialog" data-open-story="project-5" aria-controls="project-5">Read the full story <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+              </div>
+            </article>
+
+            <article class="project" aria-labelledby="project-6-title">
+              <figure class="project__media" data-tilt data-tilt-strength="4">
+                <img src="assets/images/project-agriculture.webp" alt="A golden field glowing at sunset" width="820" height="1040" fetchpriority="low" decoding="async">
+                <span class="project__index" aria-hidden="true">06</span>
+              </figure>
+              <div class="project__body">
+                <p class="project__meta"><span>06 / 08</span> <span>Food</span></p>
+                <h3 id="project-6-title">Sustainable Agriculture and Food Security</h3>
+                <p class="project__teaser">Sustainable agriculture is crucial for balancing food production with environmental conservation, ensuring long-term food security while protecting natural resources. We promote regenerative farming techniques that enhance soil health, improve water conservation, and boost biodiversity.</p>
+                <button class="project__more" type="button" aria-haspopup="dialog" data-open-story="project-6" aria-controls="project-6">Read the full story <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+              </div>
+            </article>
+
+            <article class="project" aria-labelledby="project-7-title">
+              <figure class="project__media" data-tilt data-tilt-strength="4">
+                <img src="assets/images/project-water.webp" alt="Turquoise lake surrounded by mountains and pine forest" width="820" height="1040" fetchpriority="low" decoding="async">
+                <span class="project__index" aria-hidden="true">07</span>
+              </figure>
+              <div class="project__body">
+                <p class="project__meta"><span>07 / 08</span> <span>Water</span></p>
+                <h3 id="project-7-title">Water Conservation and Management</h3>
+                <p class="project__teaser">Water conservation and management are essential for sustaining life, protecting ecosystems, and ensuring long-term water availability. We work to preserve freshwater sources through watershed protection, wetland restoration, and the prevention of industrial and agricultural pollution.</p>
+                <button class="project__more" type="button" aria-haspopup="dialog" data-open-story="project-7" aria-controls="project-7">Read the full story <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+              </div>
+            </article>
+
+            <article class="project" aria-labelledby="project-8-title">
+              <figure class="project__media" data-tilt data-tilt-strength="4">
+                <img src="assets/images/project-urban.webp" alt="Aerial view of a large green park surrounded by city buildings" width="820" height="1040" fetchpriority="low" decoding="async">
+                <span class="project__index" aria-hidden="true">08</span>
+              </figure>
+              <div class="project__body">
+                <p class="project__meta"><span>08 / 08</span> <span>Cities</span></p>
+                <h3 id="project-8-title">Urban Green Spaces and Sustainable Cities</h3>
+                <p class="project__teaser">Urban green spaces are essential for creating healthier, more sustainable cities by improving air quality, enhancing biodiversity, and providing residents with natural areas for recreation and well-being. As urbanization accelerates, we advocate for integrating parks, rooftop gardens, vertical forests, and tree-lined streets into city planning.</p>
+                <button class="project__more" type="button" aria-haspopup="dialog" data-open-story="project-8" aria-controls="project-8">Read the full story <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <div class="projects__foot container">
+          <p class="projects__hint"><span aria-hidden="true">→</span> <span class="projects__hint-desktop">Scroll to travel through the projects</span><span class="projects__hint-mobile">Swipe to explore · keep scrolling the page</span></p>
+          <a class="link-arrow" href="#get_involved">Find your way in <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        </div>
+      </div>
     </section>
-</div>
 
-<!-- Footer -->
-<div class="container pt-5">
-    <footer>
-        <p class="py-3">&copy; 2025 Protecting Our Planet NGO | All Rights Reserved</p>
-    </footer>
-</div>
+    <!-- Ways to get involved -->
+    <section class="get-involved" id="get_involved" aria-labelledby="involved-title">
+      <div class="container">
+        <div class="get-involved__layout">
+          <div class="get-involved__intro">
+            <p class="eyebrow"><span class="eyebrow__dot"></span>04 · Get involved</p>
+            <h2 class="display display--dark" id="involved-title">There are many ways <em>to help.</em></h2>
+            <p class="get-involved__lede">There are many ways you can help us in our mission to create a healthier, more sustainable world. Whether you prefer hands-on action, spreading awareness, or supporting the cause in other ways, every effort makes a difference!</p>
 
-<!-- back-to-top button -->
-<a href="#top" class="back-to-top">
-    &uarr;
-</a>
+            <div class="volunteer-card">
+              <span class="volunteer-card__badge">Hands-on</span>
+              <p>Forms for volunteers to sign up for local clean-up events and planting activities.</p>
+              <a class="link-arrow" href="https://docs.google.com/forms/d/e/1FAIpQLSehqk_YmPy5LNSskXCfqWGE3U-zZWqA-PxUjBV59IdQF4ld1w/viewform?usp=sharing" target="_blank" rel="noopener noreferrer">Open the volunteer form <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+            </div>
 
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/plugins/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+            <svg class="get-involved__frond" viewBox="0 0 240 180" aria-hidden="true">
+              <path d="M8 172C70 162 108 118 134 48" fill="none" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M45 151c-18 3-27-9-11-18 13-7 20 6 11 18ZM74 132c15-10 27-4 17 10-8 11-20 6-17-10ZM97 108c-19 1-25-13-7-20 14-6 19 8 7 20ZM111 82c16-9 26-1 14 11-9 10-20 4-14-11ZM122 55c-17 0-20-14-3-19 13-3 16 10 3 19Z" fill="currentColor"/>
+            </svg>
+          </div>
+
+          <div class="paths" data-paths>
+            <details class="path" open>
+              <summary>
+                <span class="path__num">01</span>
+                <span class="path__title">Volunteer for local clean-up events and planting activities</span>
+                <span class="path__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="path__body">
+                <p>Join community-driven initiatives to clean up parks, beaches, and public spaces. These events not only beautify our environment but also prevent waste from harming wildlife and ecosystems. Additionally, participate in tree-planting and native plant restoration projects to improve air quality, support biodiversity, and combat climate change.</p>
+                <a class="link-arrow" href="https://docs.google.com/forms/d/e/1FAIpQLSehqk_YmPy5LNSskXCfqWGE3U-zZWqA-PxUjBV59IdQF4ld1w/viewform?usp=sharing" target="_blank" rel="noopener noreferrer">Fill in the volunteer form <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+              </div>
+            </details>
+
+            <details class="path">
+              <summary>
+                <span class="path__num">02</span>
+                <span class="path__title">Educate your community about sustainability</span>
+                <span class="path__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="path__body">
+                <p>Raise awareness by hosting workshops, giving presentations, or simply having conversations with friends and family about sustainable living. You can organize school programs, community meetings, or workplace initiatives to discuss topics like waste reduction, energy conservation, and eco-friendly alternatives.</p>
+              </div>
+            </details>
+
+            <details class="path">
+              <summary>
+                <span class="path__num">03</span>
+                <span class="path__title">Share our message on social media</span>
+                <span class="path__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="path__body">
+                <p>Help spread awareness by posting about environmental issues, sharing sustainability tips, and promoting local events. Use hashtags, create engaging content, and encourage your followers to take action. A single post can inspire others to make a change!</p>
+              </div>
+            </details>
+
+            <details class="path">
+              <summary>
+                <span class="path__num">04</span>
+                <span class="path__title">Support eco-friendly businesses and practices</span>
+                <span class="path__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="path__body">
+                <p>Choose to buy from companies that prioritize sustainability, such as those that use ethical sourcing, plastic-free packaging, or renewable energy. Supporting these businesses encourages more companies to adopt environmentally friendly practices.</p>
+              </div>
+            </details>
+
+            <details class="path">
+              <summary>
+                <span class="path__num">05</span>
+                <span class="path__title">Reduce, reuse, and recycle in your daily life</span>
+                <span class="path__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="path__body">
+                <p>Make conscious choices to minimize waste. Reduce single-use plastics, opt for reusable products, and recycle properly according to your local guidelines. Composting organic waste is another great way to reduce landfill contributions and enrich the soil.</p>
+              </div>
+            </details>
+
+            <details class="path">
+              <summary>
+                <span class="path__num">06</span>
+                <span class="path__title">Advocate for environmental policies</span>
+                <span class="path__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="path__body">
+                <p>Get involved in local and national environmental advocacy. Sign petitions, attend town hall meetings, and contact representatives to push for policies that protect natural resources, reduce carbon emissions, and promote sustainable practices.</p>
+              </div>
+            </details>
+
+            <details class="path">
+              <summary>
+                <span class="path__num">07</span>
+                <span class="path__title">Organize or participate in sustainability challenges</span>
+                <span class="path__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="path__body">
+                <p>Challenge yourself and others to adopt more sustainable habits! Participate in or create initiatives like “Plastic-Free July,” “Bike to Work Month,” or “Zero-Waste Challenges.” These activities promote awareness and encourage long-term behavior changes.</p>
+              </div>
+            </details>
+
+            <details class="path">
+              <summary>
+                <span class="path__num">08</span>
+                <span class="path__title">Donate or fundraise for environmental causes</span>
+                <span class="path__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="path__body">
+                <p>Support organizations working to protect the environment by donating or organizing fundraisers. Even small contributions help fund projects such as reforestation, wildlife conservation, and clean energy research.</p>
+              </div>
+            </details>
+
+            <details class="path">
+              <summary>
+                <span class="path__num">09</span>
+                <span class="path__title">Start a community garden or urban green space</span>
+                <span class="path__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="path__body">
+                <p>Encourage local food production and biodiversity by starting or joining a community garden. These spaces provide fresh produce, improve air quality, and foster a sense of community while promoting sustainable practices.</p>
+              </div>
+            </details>
+
+            <details class="path">
+              <summary>
+                <span class="path__num">10</span>
+                <span class="path__title">Reduce your carbon footprint</span>
+                <span class="path__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="path__body">
+                <p>Reduce your carbon footprint by choosing public transport, walking, or cycling when you can, conserving energy at home, and supporting renewable energy. Small, consistent choices add up to cleaner air and a more stable climate for future generations.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Updates from the field -->
+    <section class="updates" id="updates" aria-labelledby="updates-title">
+      <div class="container">
+        <header class="updates__head reveal">
+          <div>
+            <p class="eyebrow eyebrow--light"><span class="eyebrow__dot"></span>05 · Updates</p>
+            <h2 class="display display--light" id="updates-title">Notes from <em>the field.</em></h2>
+          </div>
+          <p>News and commitments shaping the wider movement for nature — collected here so the story keeps growing.</p>
+        </header>
+
+        <div class="updates__grid">
+          <article class="update reveal">
+            <a class="update__link" href="https://www.rewild.org/press/philanthropic-organizations-commit-usd1-billion-usd-to-help-protect-30" target="_blank" rel="noopener noreferrer">
+              <figure class="update__media">
+                <img src="assets/images/update-ocean.webp" alt="Warm light over a calm ocean shoreline" width="1000" height="750" loading="lazy" decoding="async">
+                <span class="update__date">June 28, 2022</span>
+              </figure>
+              <div class="update__body">
+                <p class="update__tag">Ocean protection</p>
+                <h3>Philanthropic organizations commit $1 billion USD to help protect 30 percent of the ocean by 2030</h3>
+                <span class="update__cta">Read the update <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+              </div>
+            </a>
+          </article>
+
+          <article class="update reveal">
+            <a class="update__link" href="https://www.rewild.org/press/private-funders-of-the-new-protecting-our-planet-challenge-announce-usd5" target="_blank" rel="noopener noreferrer">
+              <figure class="update__media">
+                <img src="assets/images/update-conservation.webp" alt="Mountain peaks catching the last warm light above a pine forest" width="1000" height="750" loading="lazy" decoding="async">
+                <span class="update__date">September 22, 2021</span>
+              </figure>
+              <div class="update__body">
+                <p class="update__tag">Global conservation</p>
+                <h3>Private funders of the new “Protecting Our Planet Challenge” announce $5 billion commitment to protect and conserve 30% of planet by 2030</h3>
+                <span class="update__cta">Read the update <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donate / closing invitation -->
+    <section class="final" id="donate" aria-labelledby="donate-title">
+      <div class="final__bg" aria-hidden="true">
+        <img src="assets/images/cta-forest.webp" alt="" width="1400" height="950" loading="lazy" decoding="async">
+      </div>
+      <div class="final__veil" aria-hidden="true"></div>
+      <div class="final__rays" aria-hidden="true"></div>
+      <div class="container final__inner">
+        <p class="eyebrow eyebrow--light"><span class="eyebrow__dot"></span>06 · Make a difference</p>
+        <h2 class="display display--light" id="donate-title">Donate <em>today.</em></h2>
+        <p class="final__lede">Your donation helps us fund critical conservation efforts. Together, we can make a lasting impact.</p>
+        <div class="final__actions">
+          <a class="btn btn--sun" href="https://www.paypal.com/donate?hosted_button_id=PROTECTING_OUR_PLANET" target="_blank" rel="noopener noreferrer">
+            <span>Donate now</span>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#get_involved">
+            <span>Volunteer instead</span>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+        </div>
+        <p class="final__note">By taking action through these initiatives, we aim to create a healthier, more sustainable planet for future generations. Join us in making a difference today!</p>
+      </div>
+      <div class="final__leaf" aria-hidden="true">
+        <svg viewBox="0 0 220 220"><path d="M110 10C166 30 198 82 182 128c-13 40-65 62-110 46C26 159 8 112 28 72 45 37 74 18 110 10Z" fill="none" stroke="currentColor" stroke-width="1"/><path d="M110 196c4-48 22-88 58-124" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+      </div>
+    </section>
+  </main>
+
+  <!-- Full project stories, opened from the horizontal project journey -->
+  <dialog class="story" id="project-1" aria-labelledby="story-1-title" data-story>
+    <div class="story__panel">
+      <button class="story__close" type="button" data-close-story aria-label="Close project story"><span></span><span></span></button>
+      <figure class="story__media">
+        <img src="assets/images/project-reforestation.webp" alt="Sunlight filtering through a dense green forest beside a walking path" width="820" height="1040" loading="lazy" decoding="async">
+        <figcaption>01 · Forests</figcaption>
+      </figure>
+      <div class="story__content">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Ongoing project · 01 / 08</p>
+        <h2 id="story-1-title">Reforestation Efforts</h2>
+        <p>We are restoring deforested and degraded lands by planting thousands of trees, helping to combat climate change, restore ecosystems, and improve environmental health. Our efforts reduce carbon dioxide levels, enhance biodiversity, improve air quality, and prevent soil erosion, ensuring long-term sustainability.</p>
+        <p>Beyond environmental benefits, our reforestation programs actively involve local communities, creating jobs, strengthening economies, and fostering environmental stewardship. By working together, we ensure that restored forests continue to thrive, providing lasting benefits for both people and nature.</p>
+        <div class="story__actions"><a class="btn btn--sun" href="#get_involved" data-close-story><span>Get involved</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><button class="link-arrow" type="button" data-close-story>Close story</button></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="story" id="project-2" aria-labelledby="story-2-title" data-story>
+    <div class="story__panel">
+      <button class="story__close" type="button" data-close-story aria-label="Close project story"><span></span><span></span></button>
+      <figure class="story__media">
+        <img src="assets/images/project-plastic.webp" alt="Plastic waste drifting in bright blue ocean water" width="820" height="1040" loading="lazy" decoding="async">
+        <figcaption>02 · Waste</figcaption>
+      </figure>
+      <div class="story__content">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Ongoing project · 02 / 08</p>
+        <h2 id="story-2-title">Reducing Plastic Waste</h2>
+        <p>Reducing plastic waste is essential to protecting our environment, wildlife, and human health. Plastic pollution clogs waterways, harms marine life, and contributes to toxic pollution in our air and soil. We are actively working to address this crisis through education, policy advocacy, and hands-on action. By organizing awareness campaigns, we inform individuals and businesses about the dangers of plastic waste and encourage eco-friendly alternatives. Our community clean-up drives remove plastic from natural spaces, while our advocacy efforts push for policies that promote biodegradable materials and improved recycling systems. Through these initiatives, we aim to create plastic-free communities, reduce dependency on single-use plastics, and inspire a culture of sustainability for future generations.</p>
+        <div class="story__actions"><a class="btn btn--sun" href="#get_involved" data-close-story><span>Get involved</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><button class="link-arrow" type="button" data-close-story>Close story</button></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="story" id="project-3" aria-labelledby="story-3-title" data-story>
+    <div class="story__panel">
+      <button class="story__close" type="button" data-close-story aria-label="Close project story"><span></span><span></span></button>
+      <figure class="story__media">
+        <img src="assets/images/project-energy.webp" alt="Wind turbines standing across a field at sunset" width="820" height="1040" loading="lazy" decoding="async">
+        <figcaption>03 · Energy</figcaption>
+      </figure>
+      <div class="story__content">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Ongoing project · 03 / 08</p>
+        <h2 id="story-3-title">Clean Energy Solutions</h2>
+        <p>Clean energy solutions are key to building a sustainable future and mitigating the harmful effects of climate change. By investing in and advocating for renewable energy sources like solar, wind, and hydroelectric power, we help reduce carbon emissions and decrease dependence on fossil fuels. We also promote energy efficiency through education, technological innovation, and policy support, ensuring that individuals, businesses, and governments adopt greener practices. Our efforts aim to accelerate the transition to a cleaner, more resilient energy system that benefits both people and the planet.</p>
+        <div class="story__actions"><a class="btn btn--sun" href="#get_involved" data-close-story><span>Get involved</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><button class="link-arrow" type="button" data-close-story>Close story</button></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="story" id="project-4" aria-labelledby="story-4-title" data-story>
+    <div class="story__panel">
+      <button class="story__close" type="button" data-close-story aria-label="Close project story"><span></span><span></span></button>
+      <figure class="story__media">
+        <img src="assets/images/project-species.webp" alt="An elephant standing among dense green trees" width="820" height="1040" loading="lazy" decoding="async">
+        <figcaption>04 · Wildlife</figcaption>
+      </figure>
+      <div class="story__content">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Ongoing project · 04 / 08</p>
+        <h2 id="story-4-title">Endangered Species Protection</h2>
+        <p>Endangered species protection is vital for maintaining ecological balance and preserving the planet’s rich biodiversity. Many species face extinction due to deforestation, pollution, climate change, and human activities like illegal poaching and habitat destruction. We work to address these threats by restoring natural habitats, enforcing wildlife protection measures, and advocating for stronger conservation policies. Through education and awareness campaigns, we inspire communities to take action and support efforts to protect vulnerable species. By collaborating with local and global organizations, we create long-term solutions to ensure that endangered wildlife not only survives but thrives for future generations.</p>
+        <div class="story__actions"><a class="btn btn--sun" href="#get_involved" data-close-story><span>Get involved</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><button class="link-arrow" type="button" data-close-story>Close story</button></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="story" id="project-5" aria-labelledby="story-5-title" data-story>
+    <div class="story__panel">
+      <button class="story__close" type="button" data-close-story aria-label="Close project story"><span></span><span></span></button>
+      <figure class="story__media">
+        <img src="assets/images/project-ocean.webp" alt="A large ocean wave breaking beneath a pink evening sky" width="820" height="1040" loading="lazy" decoding="async">
+        <figcaption>05 · Oceans</figcaption>
+      </figure>
+      <div class="story__content">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Ongoing project · 05 / 08</p>
+        <h2 id="story-5-title">Ocean and Marine Conservation</h2>
+        <p>Ocean and marine conservation is essential for protecting marine life, regulating the climate, and sustaining coastal communities. Our efforts focus on reducing ocean plastic pollution, restoring damaged marine ecosystems, and advocating for policies that prevent overfishing and habitat destruction. Through initiatives like beach clean-ups, coral reef restoration, and sustainable fishing advocacy, we help maintain the delicate balance of marine biodiversity. By working with local communities, scientists, and policymakers, we strive to create long-term solutions that safeguard ocean health for future generations.</p>
+        <div class="story__actions"><a class="btn btn--sun" href="#get_involved" data-close-story><span>Get involved</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><button class="link-arrow" type="button" data-close-story>Close story</button></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="story" id="project-6" aria-labelledby="story-6-title" data-story>
+    <div class="story__panel">
+      <button class="story__close" type="button" data-close-story aria-label="Close project story"><span></span><span></span></button>
+      <figure class="story__media">
+        <img src="assets/images/project-agriculture.webp" alt="A golden field glowing at sunset" width="820" height="1040" loading="lazy" decoding="async">
+        <figcaption>06 · Food</figcaption>
+      </figure>
+      <div class="story__content">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Ongoing project · 06 / 08</p>
+        <h2 id="story-6-title">Sustainable Agriculture and Food Security</h2>
+        <p>Sustainable agriculture is crucial for balancing food production with environmental conservation, ensuring long-term food security while protecting natural resources. We promote regenerative farming techniques that enhance soil health, improve water conservation, and boost biodiversity. By supporting organic farming, agroforestry, and reduced chemical use, we help minimize pollution and preserve ecosystems. Through farmer training programs, community workshops, and advocacy for sustainable food systems, we empower local communities to adopt eco-friendly agricultural practices that improve livelihoods and resilience to climate change.</p>
+        <div class="story__actions"><a class="btn btn--sun" href="#get_involved" data-close-story><span>Get involved</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><button class="link-arrow" type="button" data-close-story>Close story</button></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="story" id="project-7" aria-labelledby="story-7-title" data-story>
+    <div class="story__panel">
+      <button class="story__close" type="button" data-close-story aria-label="Close project story"><span></span><span></span></button>
+      <figure class="story__media">
+        <img src="assets/images/project-water.webp" alt="Turquoise lake surrounded by mountains and pine forest" width="820" height="1040" loading="lazy" decoding="async">
+        <figcaption>07 · Water</figcaption>
+      </figure>
+      <div class="story__content">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Ongoing project · 07 / 08</p>
+        <h2 id="story-7-title">Water Conservation and Management</h2>
+        <p>Water conservation and management are essential for sustaining life, protecting ecosystems, and ensuring long-term water availability. We work to preserve freshwater sources through watershed protection, wetland restoration, and the prevention of industrial and agricultural pollution. By promoting sustainable irrigation techniques, wastewater recycling, and community-based water management programs, we help optimize water use while reducing waste. Our efforts aim to build climate resilience, safeguard drinking water supplies, and support both human and ecological needs in an era of increasing water scarcity. Additionally, we educate communities on the importance of water stewardship and advocate for policies that promote responsible water usage. By combining innovation, conservation, and community involvement, we strive to secure a sustainable and equitable water future for all.</p>
+        <div class="story__actions"><a class="btn btn--sun" href="#get_involved" data-close-story><span>Get involved</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><button class="link-arrow" type="button" data-close-story>Close story</button></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="story" id="project-8" aria-labelledby="story-8-title" data-story>
+    <div class="story__panel">
+      <button class="story__close" type="button" data-close-story aria-label="Close project story"><span></span><span></span></button>
+      <figure class="story__media">
+        <img src="assets/images/project-urban.webp" alt="Aerial view of a large green park surrounded by city buildings" width="820" height="1040" loading="lazy" decoding="async">
+        <figcaption>08 · Cities</figcaption>
+      </figure>
+      <div class="story__content">
+        <p class="eyebrow"><span class="eyebrow__dot"></span>Ongoing project · 08 / 08</p>
+        <h2 id="story-8-title">Urban Green Spaces and Sustainable Cities</h2>
+        <p>Urban green spaces are essential for creating healthier, more sustainable cities by improving air quality, enhancing biodiversity, and providing residents with natural areas for recreation and well-being. As urbanization accelerates, we advocate for integrating parks, rooftop gardens, vertical forests, and tree-lined streets into city planning. These initiatives help combat air pollution, reduce urban heat island effects, and improve stormwater management by absorbing excess rainfall. Additionally, green spaces promote mental and physical well-being, fostering stronger community connections and enhancing overall quality of life. Through partnerships with city planners, architects, and local communities, we work to develop eco-friendly infrastructure that prioritizes sustainability, resilience, and environmental balance in urban development.</p>
+        <div class="story__actions"><a class="btn btn--sun" href="#get_involved" data-close-story><span>Get involved</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><button class="link-arrow" type="button" data-close-story>Close story</button></div>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <a class="brand brand--footer" href="#top" aria-label="Protecting Our Planet — back to top">
+          <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M31 6C18 7 8 14 7 26c-.3 4 2 7.4 5.8 8.1C25 36.2 32 24 31 6Z" fill="currentColor"/>
+            <path d="M7 34c5-8 11-13 19-18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <span class="brand__text"><strong>Protecting Our Planet</strong><span>Environmental NGO</span></span>
+        </a>
+        <p class="site-footer__statement">A call to action for a sustainable future — for the forests, the oceans, and the generations still to come.</p>
+      </div>
+
+      <div class="site-footer__nav">
+        <div>
+          <p class="site-footer__label">Explore</p>
+          <a href="#mission">Mission &amp; vision</a>
+          <a href="#impact">Impact</a>
+          <a href="#projects">Ongoing projects</a>
+          <a href="#updates">Updates</a>
+        </div>
+        <div>
+          <p class="site-footer__label">Take part</p>
+          <a href="#get_involved">Get involved</a>
+          <a href="#get_involved">Volunteer</a>
+          <a href="#donate">Donate</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSehqk_YmPy5LNSskXCfqWGE3U-zZWqA-PxUjBV59IdQF4ld1w/viewform?usp=sharing" target="_blank" rel="noopener noreferrer">Volunteer form</a>
+        </div>
+        <div>
+          <p class="site-footer__label">Read</p>
+          <a href="https://www.rewild.org/press/philanthropic-organizations-commit-usd1-billion-usd-to-help-protect-30" target="_blank" rel="noopener noreferrer">Ocean protection update</a>
+          <a href="https://www.rewild.org/press/private-funders-of-the-new-protecting-our-planet-challenge-announce-usd5" target="_blank" rel="noopener noreferrer">Protecting Our Planet Challenge</a>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; <span data-year>2025</span> Protecting Our Planet NGO · All Rights Reserved</p>
+        <p class="site-footer__credit">Photography via Unsplash · Forest scene rendered in Three.js</p>
+        <a class="site-footer__top-link" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
